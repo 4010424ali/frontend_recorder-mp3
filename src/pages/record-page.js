@@ -174,7 +174,7 @@ export default class App extends React.Component {
                 }}
                 to={`/audio/${this.state.audioId}`}
               >
-                http://localhost/3000/audio/{this.state.audioId}
+                http://talknsend.com/audio/{this.state.audioId}
               </Link>
               <div className="download-share">
                 <button
