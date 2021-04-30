@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import mic from '../img/mic.svg';
 import stop from '../img/stop.svg';
 import redo from '../img/redo.svg';
-import '../app.css';
+import '../App.css';
 import Footer from '../components/footer';
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
