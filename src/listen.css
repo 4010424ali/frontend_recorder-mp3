@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.listen header {
+  /* border: 1px solid red; */
+  width: 500px;
+}
+
+.listen header h1 {
+  margin: 0;
+  text-indent: 10px;
+}
+
+.listen header .intro {
+  text-indent: 10px;
+  height: 20px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffe567;
+  -webkit-box-shadow: 1px 1px 2px 0px #becfa3;
+  box-shadow: 1px 1px 2px 0px #becfa3;
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-size: 0.9333rem;
+}
+
+.listen audio {
+  width: 100% !important;
+  margin: 40px auto;
+  background: #ffe567;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px 0px #becfa3, 0px 2px 3px 0px #becfa3;
+}
+
+.listen a {
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+}

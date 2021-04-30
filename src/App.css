@@ -1,38 +1,241 @@
-.App {
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 540px;
+}
+
+.app header {
+  width: 100%;
+}
+
+.app header h1 {
+  margin: 0;
+  text-indent: 10px;
+}
+
+.app header .intro {
+  text-indent: 10px;
+  height: 20px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffe567;
+  -webkit-box-shadow: 1px 1px 2px 0px #becfa3;
+  box-shadow: 1px 1px 2px 0px #becfa3;
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-size: 0.9333rem;
+}
+
+.app .record {
+  margin: auto;
+}
+
+.app .recordCont {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.app .recordCont label {
+  margin: auto;
+  background-color: #ffe567 !important;
+  width: 130px;
+  height: 130px;
+  border-radius: 6px;
+  margin-top: 50px;
+  -webkit-box-shadow: 1px 1px 2px 0px #becfa3;
+  box-shadow: 1px 1px 2px 0px #becfa3;
+  cursor: pointer;
+}
+
+.app .recordCont label img {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 74px;
+}
+
+.app .stopCont {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.app .stopCont button {
+  margin: auto;
+  background-color: #ffe567 !important;
+  width: 115px;
+  height: 115px;
+  border-radius: 6px;
+  margin-top: 50px;
+  -webkit-box-shadow: 1px 1px 2px 0px #becfa3;
+  box-shadow: 1px 1px 2px 0px #becfa3;
+  border: none;
+}
+
+.app .stopCont button img {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -75%);
+  transform: translate(-50%, -75%);
+  width: 74px;
+}
+
+.app audio {
+  width: 70%;
+  border-radius: none;
+}
+
+.audio-cont {
+  height: 100px;
+  background: rgb(202, 255, 112);
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 1px 1px 2px 0px #becfa3;
+  border-radius: 6px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: #ffe567;
+  color: #000;
+}
+
+.share {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20px;
+  width: 180px;
+  border: none;
+  height: 33px;
+  background-color: #ebffca;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px 0px #becfa3, 0px 2px 3px 0px #becfa3;
+  font-size: 20px;
+}
+
+.link {
+  width: 93% !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #ffe567;
+  border: none;
+  margin-top: 40px;
+  border-radius: 6px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 1px 1px 1px 0px #becfa3, 0px 2px 3px 0px #becfa3;
+}
+
+.download {
+  padding-top: 8px;
+  text-decoration: none;
+  background: #ffffcc;
+  padding: 10px;
+  border-radius: 6px;
+  color: black;
+  width: 120px;
+  font-weight: 600;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mobile {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.download-share {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  margin: 20px 0 0 0;
 }
 
-.App-link {
-  color: #61dafb;
+.download-share button {
+  cursor: pointer;
+  height: 40px;
+  border: none;
+  background: #ffffcc;
+  width: 130px;
+  border-radius: 6px;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 560px) {
+  .app {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .link {
+    display: none;
+  }
+  .mobile {
+    margin-top: 30px;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe567;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px 0px #becfa3, 0px 2px 3px 0px #becfa3;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .mobile a {
+    text-align: center;
+    width: 170px;
+  }
+
+  .mobile p {
+    text-indent: 10px;
+  }
+  .links {
+    display: flex;
+    justify-content: space-around;
+  }
+  .links button {
+    border: none;
+    background: #ffffcc;
+    border-radius: 6px;
+    padding: 0 10px;
   }
 }
+/*# sourceMappingURL=app.css.map */
