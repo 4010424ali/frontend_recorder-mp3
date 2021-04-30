@@ -147,19 +147,7 @@ export default class App extends React.Component {
           </div>
         )}
 
-        {this.state.loader && (
-          <h2
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '100px',
-              textAlign: 'center',
-            }}
-          >
-            Loading... <br />
-            (It would take a while)<div className="loader"></div>
-          </h2>
-        )}
+        {this.state.loader && null}
 
         {this.state.showBtn && (
           <button
@@ -221,8 +209,7 @@ export default class App extends React.Component {
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={async () => {
-                    let text =
-                      'http://localhost/3000/audio/' + this.state.audioId;
+                    let text = 'talknsend.com/audio/' + this.state.audioId;
                     navigator.clipboard.writeText(text);
                   }}
                 >
