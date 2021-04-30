@@ -1,7 +1,7 @@
 import React from 'react';
 import '../listen.css';
 const axios = require('axios');
-const baseUrl = 'https://immense-shelf-84954.herokuapp.com';
+// const baseUrl = 'https://immense-shelf-84954.herokuapp.com';
 
 export default class ListenPage extends React.Component {
   constructor(props) {
@@ -15,30 +15,32 @@ export default class ListenPage extends React.Component {
     };
   }
 
-  componentDidMount() {
-    (async (_) => {
-      try {
-        const result = await axios.get(
-          `${baseUrl}/audio/${this.props.match.params.id}`
-        );
-        console.log(result, 'resultfrom get api');
+  async getDateFromUsr() {
+    try {
+      const result = await axios.get(
+        `https://immense-shelf-84954.herokuapp.com/audio/${this.props.match.params.id}`
+      );
+      console.log(result, 'resultfrom get api');
 
-        this.setState({ audio: result.data });
-        // const file = new File(
-        //   result.data.buffer.data,
-        //   "me-at-thevoice.mp3",
-        //   {
-        //     type: "audio/mp3",
-        //   }
-        // );
-        // console.log(file, 'fileee')
-        // this.setState({ file });
-        // const blobUrL = URL.createObjectURL(file);
-        // this.setState({ blobUrL });
-      } catch (err) {
-        console.log(err);
-      }
-    })();
+      this.setState({ audio: result.data });
+      // const file = new File(
+      //   result.data.buffer.data,
+      //   "me-at-thevoice.mp3",
+      //   {
+      //     type: "audio/mp3",
+      //   }
+      // );
+      // console.log(file, 'fileee')
+      // this.setState({ file });
+      // const blobUrL = URL.createObjectURL(file);
+      // this.setState({ blobUrL });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  componentDidMount() {
+    this.getDateFromUsr();
   }
 
   render() {
