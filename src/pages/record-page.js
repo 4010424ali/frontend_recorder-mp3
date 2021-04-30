@@ -174,14 +174,14 @@ export default class App extends React.Component {
                 }}
                 to={`/audio/${this.state.audioId}`}
               >
-                talknsend.com/audio/{this.state.audioId}
+                https://talknsend.com/audio/{this.state.audioId}
               </Link>
               <div className="download-share">
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={async () => {
                     let text =
-                      'http://localhost/3000/audio/' + this.state.audioId;
+                      'https://talknsend.com/audio/' + this.state.audioId;
                     navigator.clipboard.writeText(text);
                   }}
                 >
@@ -204,12 +204,13 @@ export default class App extends React.Component {
                   }}
                   to={`/audio/${this.state.audioId}`}
                 >
-                  http://localhost/3000/au..
+                  https://talknsend.com/au..
                 </Link>
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={async () => {
-                    let text = 'talknsend.com/audio/' + this.state.audioId;
+                    let text =
+                      'https://talknsend.com/audio/' + this.state.audioId;
                     navigator.clipboard.writeText(text);
                   }}
                 >
