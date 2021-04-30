@@ -147,7 +147,18 @@ export default class App extends React.Component {
           </div>
         )}
 
-        {this.state.loader && null}
+        {this.state.loader && (
+          <h2
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '100px',
+              textAlign: 'center',
+            }}
+          >
+            Loading...
+          </h2>
+        )}
 
         {this.state.showBtn && (
           <button
