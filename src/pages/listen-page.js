@@ -1,7 +1,7 @@
 import React from 'react';
 import '../listen.css';
 const axios = require('axios');
-const baseUrl = ' https://immense-shelf-84954.herokuapp.com';
+const baseUrl = 'https://immense-shelf-84954.herokuapp.com';
 
 export default class ListenPage extends React.Component {
   constructor(props) {

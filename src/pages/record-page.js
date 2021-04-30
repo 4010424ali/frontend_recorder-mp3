@@ -9,7 +9,7 @@ import Footer from '../components/footer';
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 const axios = require('axios').default;
-const baseUrl = ' https://immense-shelf-84954.herokuapp.com';
+const baseUrl = 'https://immense-shelf-84954.herokuapp.com';
 
 export default class App extends React.Component {
   constructor() {
@@ -180,8 +180,7 @@ export default class App extends React.Component {
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={async () => {
-                    let text =
-                      'https://talknsend.com/audio/' + this.state.audioId;
+                    let text = `https://talknsend.com/audio/${this.state.audioId}`;
                     navigator.clipboard.writeText(text);
                   }}
                 >
@@ -209,9 +208,9 @@ export default class App extends React.Component {
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={async () => {
-                    let text =
-                      'https://talknsend.com/audio/' + this.state.audioId;
-                    navigator.clipboard.writeText(text);
+                    navigator.clipboard.writeText(
+                      `https://talknsend.com/audio/${this.state.audioId}`
+                    );
                   }}
                 >
                   Copy Link

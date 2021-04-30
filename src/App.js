@@ -1,7 +1,7 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import RecordPage from "./pages/record-page";
-import ListenPage from "./pages/listen-page";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import RecordPage from './pages/record-page';
+import ListenPage from './pages/listen-page';
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
         <Route path="/" exact>
           <RecordPage />
         </Route>
-        <Route path="/audio/:id" exact component={ListenPage}></Route>
+        <Route path="/audio/:id" exact component={ListenPage} />
       </Switch>
     </Router>
   );
