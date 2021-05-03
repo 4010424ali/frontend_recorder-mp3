@@ -47,7 +47,8 @@ export default class App extends React.Component {
       console.log('Permission Denied');
     } else {
       Mp3Recorder.start()
-        .then(() => {
+        .then((data) => {
+          console.log(data);
           this.setState({ isRecording: true });
         })
         .catch((e) => console.error(e));
@@ -59,6 +60,7 @@ export default class App extends React.Component {
     Mp3Recorder.stop()
       .getMp3()
       .then(([buffer, blob]) => {
+        console.log(Mp3Recorder.context.currentTime);
         let reader = new FileReader();
         reader.readAsDataURL(blob);
         reader.onloadend = () => {
@@ -101,7 +103,12 @@ export default class App extends React.Component {
         },
       });
       console.log(res);
-      this.setState({ showBtn: true, audioId: res.data._id, loader: false });
+      this.setState({
+        showBtn: true,
+        showLink: true,
+        audioId: res.data._id,
+        loader: false,
+      });
     } catch (err) {
       console.log('err from audio post api', err);
     }

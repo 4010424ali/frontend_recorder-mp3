@@ -44,29 +44,34 @@ export default class ListenPage extends React.Component {
   }
 
   render() {
-    if (this.state.audio) {
-      return (
-        <div className="listen">
-          {/* <audio src={this.state.blobUrL} controls="controls" /> */}
-          <header>
-            <a href="/">Talk N Send</a>
-            <div className="container">
-              <div className="intro">
-                <p>Talk N Send - Free audio recording and sharing service..</p>
+    return (
+      <div className="body">
+        {this.state.audio ? (
+          <div className="listen">
+            {/* <audio src={this.state.blobUrL} controls="controls" /> */}
+            <header>
+              <a href="/">Talk N Send</a>
+              <div className="container">
+                <div className="intro">
+                  <p>
+                    Talk N Send - Free audio recording and sharing service..
+                  </p>
+                </div>
               </div>
-            </div>
-          </header>
+            </header>
 
-          <audio
-            controls="controls"
-            autobuffer="autobuffer"
-            style={{ width: '400px' }}
-          >
-            <source src={this.state.audio?.base64String} />
-          </audio>
-        </div>
-      );
-    }
-    return <p>Loading</p>;
+            <audio
+              controls="controls"
+              autobuffer="autobuffer"
+              style={{ width: '400px' }}
+            >
+              <source src={this.state.audio?.base64String} />
+            </audio>
+          </div>
+        ) : (
+          <p>Loading</p>
+        )}
+      </div>
+    );
   }
 }
