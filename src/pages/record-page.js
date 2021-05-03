@@ -1,11 +1,13 @@
 import React from 'react';
 import MicRecorder from 'mic-recorder-to-mp3';
 import { Link } from 'react-router-dom';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import mic from '../img/mic.svg';
 import stop from '../img/stop.svg';
 import redo from '../img/redo.svg';
 import '../App.css';
 import Footer from '../components/footer';
+import 'react-circular-progressbar/dist/styles.css';
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 const axios = require('axios').default;
@@ -24,6 +26,7 @@ export default class App extends React.Component {
       loader: false,
       fine: false,
       showLink: false,
+      progress: 0,
     };
 
     navigator.mediaDevices.getUserMedia(
@@ -80,7 +83,23 @@ export default class App extends React.Component {
       base64data: base64data,
     };
     try {
-      const res = await axios.post(`${baseUrl}/audio`, data);
+      const res = await axios.post(`${baseUrl}/audio`, data, {
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        onUploadProgress: (progressEvent) => {
+          this.setState({
+            progress: parseInt(
+              Math.round((progressEvent.loaded * 100) / progressEvent.total)
+            ),
+          });
+          console.log(
+            parseInt(
+              Math.round((progressEvent.loaded * 100) / progressEvent.total)
+            )
+          );
+        },
+      });
       console.log(res);
       this.setState({ showBtn: true, audioId: res.data._id, loader: false });
     } catch (err) {
@@ -148,7 +167,7 @@ export default class App extends React.Component {
         )}
 
         {this.state.loader && (
-          <h2
+          <div
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -156,8 +175,13 @@ export default class App extends React.Component {
               textAlign: 'center',
             }}
           >
-            Loading...
-          </h2>
+            <div style={{ width: '100px', height: '100px' }}>
+              <CircularProgressbar
+                value={this.state.progress}
+                text={`${this.state.progress}%`}
+              />
+            </div>
+          </div>
         )}
 
         {this.state.showBtn && (
